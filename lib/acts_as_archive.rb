@@ -133,7 +133,7 @@ class ActsAsArchive
           else
             eval <<-EVAL
               class ::#{options[:class]} < ActiveRecord::Base
-                table_name = "#{options[:table]}"
+                self.table_name = "#{options[:table]}"
               end
             EVAL
             klass = eval("::#{options[:class]}")
